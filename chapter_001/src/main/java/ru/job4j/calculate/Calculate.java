@@ -16,16 +16,11 @@ public class Calculate {
 		System.out.println("Hello World");
 	}
 	/**
-	 * Method echo.
-	 * @param value
-	 * @return value = ...
-	 */
-	public final String echo(String value) {
-		if (value != null) {
-			value = String.format("%s value = ", value);
-		} else {
-			value = "value = null";
-		}
-		return String.format("%s %s %s", value, value, value);
+	* Method echo.
+	* @param name Your name.
+	* @return Echo plus your name.
+	*/
+	public String echo(String name) {
+	    return "Echo, echo, echo : " + name;
 	}
 }
