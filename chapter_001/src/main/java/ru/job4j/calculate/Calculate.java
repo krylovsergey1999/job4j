@@ -20,7 +20,7 @@ public class Calculate {
 	 * @param value
 	 * @return value = ...
 	 */
-	public final String echo(final String value) {
+	public final String echo(String value) {
 		if (value != null) {
 			value = String.format("%s value = ", value);
 		} else {
