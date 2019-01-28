@@ -3,19 +3,17 @@ package ru.job4j.array;
 public class FindLoop {
     /**
      * Проверяет наличие элемента в данном масиве
+     *
      * @param data Заданный массив
-     * @param el Искомый элемент
+     * @param el   Искомый элемент
      * @return индекс искомого элемента в массиве или -1, если такой элемент отсутствует
      */
     public int indexOf(int[] data, int el) {
         int rst = -1;
-        int index = 0;
-        for (int i: data) {
-            if (i == el) {
-                rst = index;
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] == el) {
+                rst = i;
                 break;
-            } else {
-                index++;
             }
         }
         return rst;
