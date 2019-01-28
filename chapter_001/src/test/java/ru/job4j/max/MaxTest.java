@@ -19,4 +19,34 @@ public class MaxTest {
         int result = maxim.max(10, 2);
         assertThat(result, is(10));
     }
+
+    /**
+     *  Третье число наибольшее.
+     */
+    @Test
+    public void whenThirdIsGreatest() {
+        Max maxim = new Max();
+        int result = maxim.max(1,2,3);
+        assertThat(result, is(3));
+    }
+
+    /**
+     *  Второе число наибольшее.
+     */
+    @Test
+    public void whenSecondIsGreatest() {
+        Max maxim = new Max();
+        int result = maxim.max(1,20,3);
+        assertThat(result, is(20));
+    }
+
+    /**
+     *  Первое число наибольшее.
+     */
+    @Test
+    public void whenFirstIsGreatest() {
+        Max maxim = new Max();
+        int result = maxim.max(100,20,3);
+        assertThat(result, is(100));
+    }
 }
