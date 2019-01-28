@@ -1,6 +1,7 @@
 package ru.job4j.max;
 
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -21,32 +22,32 @@ public class MaxTest {
     }
 
     /**
-     *  Третье число наибольшее.
+     * Третье число наибольшее.
      */
     @Test
     public void whenThirdIsGreatest() {
         Max maxim = new Max();
-        int result = maxim.max(1,2,3);
+        int result = maxim.max(1, 2, 3);
         assertThat(result, is(3));
     }
 
     /**
-     *  Второе число наибольшее.
+     * Второе число наибольшее.
      */
     @Test
     public void whenSecondIsGreatest() {
         Max maxim = new Max();
-        int result = maxim.max(1,20,3);
+        int result = maxim.max(1, 20, 3);
         assertThat(result, is(20));
     }
 
     /**
-     *  Первое число наибольшее.
+     * Первое число наибольшее.
      */
     @Test
     public void whenFirstIsGreatest() {
         Max maxim = new Max();
-        int result = maxim.max(100,20,3);
+        int result = maxim.max(100, 20, 3);
         assertThat(result, is(100));
     }
 }
