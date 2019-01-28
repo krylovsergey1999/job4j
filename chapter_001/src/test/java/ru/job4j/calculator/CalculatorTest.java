@@ -6,6 +6,9 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class CalculatorTest {
+    /**
+     * Тест проверяющий сумму.
+     */
     @Test
     public void whenAddOnePlusOneThenTwo() {
         Calculator calc = new Calculator();
@@ -15,6 +18,9 @@ public class CalculatorTest {
         assertThat(result, is(expected));
     }
 
+    /**
+     * Тест проверяющий разность.
+     */
     @Test
     public void whenSubtractTwoElement() {
         Calculator calc = new Calculator();
@@ -24,6 +30,9 @@ public class CalculatorTest {
         assertThat(result, is(expected));
     }
 
+    /**
+     * Тест проверяющий деление.
+     */
     @Test
     public void whenDivTwoElement() {
         Calculator calc = new Calculator();
@@ -33,6 +42,9 @@ public class CalculatorTest {
         assertThat(result, is(expected));
     }
 
+    /**
+     * Тест проверяющий умножение.
+     */
     @Test
     public void whenMultiple() {
         Calculator calc = new Calculator();
