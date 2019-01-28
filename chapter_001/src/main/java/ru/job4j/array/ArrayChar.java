@@ -12,14 +12,15 @@ public class ArrayChar {
 
     /**
      * Проверяет. что слово начинается с префикса.
+     *
      * @param prefix префикс.
      * @return если слово начинается с префикса
      */
     public boolean startWith(String prefix) {
         int index = 0;
         char[] value = prefix.toCharArray();
-        for(char el: value){
-            if (el == this.data[index]){
+        for (char el : value) {
+            if (el == this.data[index]) {
                 index++;
             } else {
                 return false;
