@@ -19,10 +19,8 @@ public class ArrayChar {
     public boolean startWith(String prefix) {
         int index = 0;
         char[] value = prefix.toCharArray();
-        for (char el : value) {
-            if (el == this.data[index]) {
-                index++;
-            } else {
+        for (int i = 0; i < value.length; i++) {
+            if (value[i] != this.data[i]) {
                 return false;
             }
         }
