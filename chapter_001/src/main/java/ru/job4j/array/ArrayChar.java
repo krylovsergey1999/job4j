@@ -18,13 +18,14 @@ public class ArrayChar {
      */
     public boolean startWith(String prefix) {
         int index = 0;
+        boolean res = true;
         char[] value = prefix.toCharArray();
         for (int i = 0; i < value.length; i++) {
             if (value[i] != this.data[i]) {
-                return false;
+                res = false;
             }
         }
         // проверить. что массив data имеет первые элементы одинаковые с value
-        return true;
+        return res;
     }
 }
