@@ -17,6 +17,7 @@ public class ArrayDuplicate {
                     for (int h = j; h < l - 1; h++)
                         array[h] = array[h + 1];
                     l--;
+                    j--;
                 }
             }
         }

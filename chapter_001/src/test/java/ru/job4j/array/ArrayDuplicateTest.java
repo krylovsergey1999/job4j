@@ -24,4 +24,13 @@ public class ArrayDuplicateTest {
         String[] result = duplicate.remove(input);
         assertThat(result, is(expected));
     }
+
+    @Test
+    public void whenFiveEl1() {
+        ArrayDuplicate duplicate = new ArrayDuplicate();
+        String[] input = {"Привет", "Привет", "Привет", "Привет", "Привет"};
+        String[] expected = {"Привет"};
+        String[] result = duplicate.remove(input);
+        assertThat(result, is(expected));
+    }
 }
