@@ -1,4 +1,4 @@
-package tracker;
+package ru.job4j.tracker;
 
 public class Item {
     // Id заявки
@@ -16,17 +16,32 @@ public class Item {
     // Список комментариев
     private String[] comments;
 
-    public Item() {
-        this.name = "Default";
-        this.id = "";
-    }
+
 
     public void setId(String id) {
         this.id = id;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public Item() {
+        this.name = "Error";
+        this.id = "xxx";
+    }
+
     public Item(String name, String desc) {
         this.name = name;
         this.desc = desc;
+    }
+
+    public Item(String name, String desc, long create) {
+        this(name, desc);
+        this.create = create;
     }
 }
