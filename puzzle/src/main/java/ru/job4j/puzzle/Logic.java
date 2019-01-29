@@ -37,12 +37,12 @@ public class Logic {
         return rst;
     }
 
-    public boolean isFree(Cell ... cells) {
+    public boolean isFree(Cell... cells) {
         boolean result = cells.length > 0;
         for (Cell cell : cells) {
             if (this.findBy(cell) != -1) {
-               result = false;
-               break;
+                result = false;
+                break;
             }
         }
         return result;
@@ -66,9 +66,29 @@ public class Logic {
         return rst;
     }
 
+    /**
+     * Беру и складываю все еденички для этого у меня два массива: строк и столбцов.
+     * А потом проверяю если ли у меня хоть в одной строке или столбце 5.
+     * @return
+     */
     public boolean isWin() {
         int[][] table = this.convert();
+        int l = table.length;
+        int[] column = new int[l];
+        int[] line = new int[l];
+        for (int i = 0; i < l; i++) {
+            for (int j = 0; j < l; j++) {
+                if (table[i][j] == 1) {
+                    column[j]++;
+                    line[i]++;
+                }
+            }
+        }
         boolean result = false;
+        for (int i = 0; i < l; i++) {
+            if ((column[i] == 5) || (line[i] == 5))
+                result = true;
+        }
         return result;
     }
 
