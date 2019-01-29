@@ -82,13 +82,15 @@ public class Logic {
             }
         }
         boolean result = false;
-        int line = 0, column = 0;
-        for (int i = 0; i < l; i++) {
-            line += table[index][i];
-            column += table[i][index];
-        }
-        if ((line == 5) || (column == 5)) {
-            result = true;
+        if (index != -1) {
+            int line = 0, column = 0;
+            for (int i = 0; i < l; i++) {
+                line += table[index][i];
+                column += table[i][index];
+            }
+            if ((line == 5) || (column == 5)) {
+                result = true;
+            }
         }
         return result;
     }
