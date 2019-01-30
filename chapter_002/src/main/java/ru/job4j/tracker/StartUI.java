@@ -65,7 +65,7 @@ public class StartUI {
         System.out.println("______________________________");
         System.out.println("Поиск заявок по имени");
         String name = this.input.ask("Введите имя заявки :");
-        for(Item el : this.tracker.findByName(name)) {
+        for (Item el : this.tracker.findByName(name)) {
             System.out.println(el.getName() + " " + el.getDesc() + " " + el.getId());
         }
         System.out.println("______________________________");
@@ -122,7 +122,7 @@ public class StartUI {
         } else {
             System.out.println("Заявок нет");
         }
-        for(Item el :this.tracker.findAll()) {
+        for (Item el : this.tracker.findAll()) {
             System.out.println(el.getName() + " " + el.getDesc());
         }
         System.out.println("______________________________");

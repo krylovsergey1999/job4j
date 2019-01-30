@@ -17,7 +17,6 @@ public class Item {
     private String[] comments;
 
 
-
     public void setId(String id) {
         this.id = id;
     }
@@ -30,7 +29,9 @@ public class Item {
         return this.name;
     }
 
-    public String getDesc() { return this.desc;}
+    public String getDesc() {
+        return this.desc;
+    }
 
     public Item() {
         this.name = "Error";
