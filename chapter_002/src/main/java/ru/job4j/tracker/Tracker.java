@@ -6,8 +6,11 @@ public class Tracker {
     private final Item[] items = new Item[100];
     private static final Random RN = new Random();
     private int position = 0;
-    Date date = new Date();
+    private Date date = new Date();
 
+    public Item[] getItems() {
+        return items;
+    }
 
     public Item add(Item item) {
         item.setId(this.generateId());

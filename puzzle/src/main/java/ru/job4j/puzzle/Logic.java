@@ -75,7 +75,7 @@ public class Logic {
         int[][] table = this.convert();
         int l = table.length;
         int index = -1;
-        for (int i = 0; i<l; i++) {
+        for (int i = 0; i < l; i++) {
             if (table[i][i] == 1) {
                 index = i;
                 break;

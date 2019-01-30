@@ -29,37 +29,24 @@ public class StartUI {
         while (!exit) {
             this.showMenu();
             String answer = this.input.ask("Введите пункт меню : ");
-            switch (answer) {
-                case ADD: {
-                    this.createItem();
-                    break;
-                }
-                case SHOW: {
-                    this.showAllItems();
-                    break;
-                }
-                case EDIT: {
-                    this.editItem();
-                    break;
-                }
-                case DEL: {
-                    this.deleteItem();
-                    break;
-                }
-                case ID: {
-                    this.findById();
-                    break;
-                }
-                case NAME: {
-                    this.findByNAME();
-                    break;
-                }
-                case EXIT: {
-                    exit = true;
-                }
+            if (answer.equals(ADD)) {
+                this.createItem();
+            } else if (answer.equals(SHOW)) {
+                this.showAllItems();
+            } else if (answer.equals(EDIT)) {
+                this.editItem();
+            } else if (answer.equals(DEL)) {
+                this.deleteItem();
+            } else if (answer.equals(ID)) {
+                this.findById();
+            } else if (answer.equals(NAME)) {
+                this.findByNAME();
+            } else if (answer.equals(EXIT)) {
+                exit = true;
             }
         }
     }
+
 
     private void findByNAME() {
         System.out.println("______________________________");
@@ -75,10 +62,11 @@ public class StartUI {
         System.out.println("______________________________");
         System.out.println("Поиск заявки по id");
         String id = this.input.ask("Введите id заявки :");
-        if (this.tracker.findById(id) == null) {
+        Item item = this.tracker.findById(id);
+        if (item == null) {
             System.out.println("Заявки с заданным id не существует");
         } else {
-            showItem(this.tracker.findById(id));
+            showItem(item);
         }
         System.out.println("______________________________");
     }
@@ -91,10 +79,9 @@ public class StartUI {
         System.out.println("______________________________");
         System.out.println("Удаление заявки");
         String id = this.input.ask("Введите id заявки :");
-        if (this.tracker.findById(id) == null) {
+        if (this.tracker.delete(id)) {
             System.out.println("Заявки с заданным id нет");
         } else {
-            this.tracker.delete(id);
             System.out.println("Заявка удалена!!!");
         }
         System.out.println("______________________________");
@@ -117,14 +104,10 @@ public class StartUI {
 
     private void showAllItems() {
         System.out.println("______________________________");
-        if (this.tracker.getPosition() != 0) {
-            System.out.println("Ниже показаны будут все заявки.");
-        } else {
-            System.out.println("Заявок нет");
-        }
         for (Item el : this.tracker.findAll()) {
             System.out.println(el.getName() + " " + el.getDesc());
         }
+        System.out.println("Показаны все имеющиеся заявки!");
         System.out.println("______________________________");
     }
 
