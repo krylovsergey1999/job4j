@@ -13,6 +13,12 @@ public class StubInput implements Input {
     private final String[] value;
 
     /**
+     *  Выполнился ли список операций записанных в value.
+     */
+    private boolean happened = true;
+
+
+    /**
      * Поле считает количество вызовов метода ask.
      * При каждом вызове надо передвинуть указатель на новое число.
      */
@@ -22,6 +28,13 @@ public class StubInput implements Input {
         this.value = value;
     }
 
+    public boolean getHappened() {
+        return this.happened;
+    }
+
+    public void setHappened(boolean x) {
+        this.happened = x;
+    }
     /**
      * Давайте рассмотрим, как работает этот метод.
      * у нас есть объект в котором содержатся заранее продуманные ответы.

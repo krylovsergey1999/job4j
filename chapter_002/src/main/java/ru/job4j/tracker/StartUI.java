@@ -19,6 +19,8 @@ public class StartUI {
 
     private final Tracker tracker;
 
+    private boolean success = false;
+
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
@@ -53,6 +55,7 @@ public class StartUI {
         System.out.println("Поиск заявок по имени");
         String name = this.input.ask("Введите имя заявки :");
         for (Item el : this.tracker.findByName(name)) {
+            this.success = true;
             System.out.println(el.getName() + " " + el.getDesc() + " " + el.getId());
         }
         System.out.println("______________________________");
@@ -65,8 +68,10 @@ public class StartUI {
         Item item = this.tracker.findById(id);
         if (item == null) {
             System.out.println("Заявки с заданным id не существует");
+            this.success = false;
         } else {
             showItem(item);
+            this.success = true;
         }
         System.out.println("______________________________");
     }
@@ -80,9 +85,9 @@ public class StartUI {
         System.out.println("Удаление заявки");
         String id = this.input.ask("Введите id заявки :");
         if (this.tracker.delete(id)) {
-            System.out.println("Заявки с заданным id нет");
-        } else {
             System.out.println("Заявка удалена!!!");
+        } else {
+            System.out.println("Заявки с заданным id нет");
         }
         System.out.println("______________________________");
     }
@@ -134,5 +139,9 @@ public class StartUI {
 
     public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();
+    }
+
+    public boolean getSuccess() {
+        return this.success;
     }
 }
