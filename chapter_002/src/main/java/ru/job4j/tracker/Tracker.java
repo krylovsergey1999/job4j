@@ -78,4 +78,6 @@ public class Tracker {
         }
         return result;
     }
+
+    public int getPosition() {return this.position;}
 }

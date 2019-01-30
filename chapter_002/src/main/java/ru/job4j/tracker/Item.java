@@ -30,6 +30,8 @@ public class Item {
         return this.name;
     }
 
+    public String getDesc() { return this.desc;}
+
     public Item() {
         this.name = "Error";
         this.id = "xxx";
