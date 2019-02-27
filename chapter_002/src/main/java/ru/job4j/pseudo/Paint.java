@@ -8,9 +8,6 @@ public class Paint {
      * @param shape
      */
     public void draw(Shape shape) {
-        if (shape instanceof Square)
-            System.out.println(((Square) shape).draw());
-        if (shape instanceof Triangle)
-            System.out.println(((Triangle) shape).draw());
+        System.out.println(shape.draw());
     }
 }
