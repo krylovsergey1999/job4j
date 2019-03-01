@@ -2,25 +2,16 @@ package ru.job4j.tracker;
 
 public class StartUI {
     private static final String ADD = "0";
-
     private static final String SHOW = "1";
-
     private static final String EDIT = "2";
-
     private static final String DEL = "3";
-
     private static final String ID = "4";
-
     private static final String NAME = "5";
-
     private static final String EXIT = "6";
-
     private final Input input;
-
     private final Tracker tracker;
-
     private boolean success = false;
-
+    
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
