@@ -10,12 +10,14 @@ import ru.job4j.tracker.input.StubInput;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class TestAddItem {
+public class TestUpdateItem {
     Tracker tracker = new Tracker();
+
     @Test
-    public void whenAddItem() {
-        Input input = new StubInput(new String[]{"1", "kiti", "girl","y"});
+    public void whenUpdateItem() {
+        Item item = tracker.add(new Item("kiti", "girl"));
+        Input input = new StubInput(new String[]{"3", item.getId(), "test", "replace", "y"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[0].getName(), is("kiti"));
+        assertThat(tracker.findById(item.getId()).getName(), is("test"));
     }
 }
