@@ -10,13 +10,6 @@ public class Item {
     // Описание
     private String desc;
 
-    // Дата создания
-    private long create;
-
-    // Список комментариев
-    private String[] comments;
-
-
     public void setId(String id) {
         this.id = id;
     }
@@ -33,18 +26,12 @@ public class Item {
         return this.desc;
     }
 
-    public Item() {
-        this.name = "Error";
-        this.id = "xxx";
+    public void showItem() {
+        System.out.println(this.getName() + " Description:" + " " + this.getDesc() + " id: " + this.getId());
     }
 
     public Item(String name, String desc) {
         this.name = name;
         this.desc = desc;
-    }
-
-    public Item(String name, String desc, long create) {
-        this(name, desc);
-        this.create = create;
     }
 }
