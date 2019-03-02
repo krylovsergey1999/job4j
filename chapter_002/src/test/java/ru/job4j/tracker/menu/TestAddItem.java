@@ -12,9 +12,10 @@ import static org.hamcrest.core.Is.is;
 
 public class TestAddItem {
     Tracker tracker = new Tracker();
+
     @Test
     public void whenAddItem() {
-        Input input = new StubInput(new String[]{"1", "kiti", "girl","y"});
+        Input input = new StubInput(new String[]{"1", "kiti", "girl", "y"});
         new StartUI(input, tracker).init();
         assertThat(tracker.findAll()[0].getName(), is("kiti"));
     }

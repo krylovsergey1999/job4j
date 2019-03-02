@@ -10,9 +10,9 @@ public class TrackerTest {
     @Test
     public void whenAddItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("kiti","girl");
+        Item item = new Item("kiti", "girl");
         tracker.add(item);
-        assertThat(tracker.findAll()[0],is(item));
+        assertThat(tracker.findAll()[0], is(item));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class TrackerTest {
         tracker.add(item1);
         Item item2 = new Item("tate", "xz");
         tracker.replace(item1.getId(), item2);
-        assertThat(tracker.findById(item1.getId()).getName(),is("tate"));
+        assertThat(tracker.findById(item1.getId()).getName(), is("tate"));
     }
 
     @Test

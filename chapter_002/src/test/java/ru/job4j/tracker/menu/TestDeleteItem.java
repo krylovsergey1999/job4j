@@ -12,12 +12,13 @@ import static org.hamcrest.core.Is.is;
 
 public class TestDeleteItem {
     Tracker tracker = new Tracker();
+
     @Test
     public void whenDeleteItem() {
-        Item item1 = new Item("kiti","girl");
+        Item item1 = new Item("kiti", "girl");
         tracker.add(item1);
-        Input input = new StubInput(new String[]{"4",item1.getId(),"y"});
+        Input input = new StubInput(new String[]{"4", item1.getId(), "y"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll().length,is(0));
+        assertThat(tracker.findAll().length, is(0));
     }
 }

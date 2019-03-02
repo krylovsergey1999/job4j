@@ -39,7 +39,7 @@ public class TestFindItemById {
         new StartUI(input, tracker).init();
         String result = out.toString();
         String sItem = item.getName() + " Description:" + " " + item.getDesc() + " id: " + item.getId();
-        String expected = s + "------------ Find item by Id --------------\r\n"+sItem+"\r\n------------ The end. --------------\r\n";
+        String expected = s + "------------ Find item by Id --------------\r\n" + sItem + "\r\n------------ The end. --------------\r\n";
         assertTrue(result.equals(expected));
     }
 }
