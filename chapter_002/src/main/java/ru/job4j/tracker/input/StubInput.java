@@ -25,7 +25,7 @@ public class StubInput implements Input {
                 }
             }
         } catch (Exception e) {
-            throw new MenuOutException("enter the number!!!");
+            throw new NumberFormatException();
         }
         throw new MenuOutException("Out of range");
     }
