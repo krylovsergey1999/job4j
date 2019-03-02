@@ -1,5 +1,7 @@
 package ru.job4j.tracker.input;
 
+import ru.job4j.tracker.menu.MenuOutException;
+
 import java.util.Scanner;
 
 public class ConsoleInput implements Input {
@@ -13,19 +15,17 @@ public class ConsoleInput implements Input {
 
     @Override
     public int ask(String question, int[] range) {
-        while (true) {
-            try {
-                System.out.print(question);
-                int unknown = Integer.valueOf(sc.nextLine()) - 1;
-                for (int el : range) {
-                    if (el == unknown) {
-                        return unknown;
-                    }
-                }
-                System.out.println("select a value from the menu range!!!");
-            } catch (Exception e) {
-                System.out.println("enter the number!!!");
+        int key = Integer.valueOf(this.ask(question)) - 1;
+        boolean exist = false; // exist - существовать
+        for (int value : range) {
+            if (value == key) {
+                exist = true;
+                break;
             }
         }
+        if (!exist) {
+            throw new MenuOutException("Out of range");
+        }
+        return key;
     }
 }
