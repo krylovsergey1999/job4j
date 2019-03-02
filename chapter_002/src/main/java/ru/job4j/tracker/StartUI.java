@@ -18,7 +18,11 @@ public class StartUI {
         menu.fillActions();
         do {
             menu.show();
-            menu.select(Integer.valueOf(input.ask("select: ")) - 1);
+            int[] range = new int[menu.getActionsLentgh()];
+            for(int i=0; i < menu.getActionsLentgh(); i++){
+                range[i] = i;
+            }
+            menu.select(input.ask("select: ",range));
         } while (!"y".equals(this.input.ask("Exit?(y): ")));
     }
 

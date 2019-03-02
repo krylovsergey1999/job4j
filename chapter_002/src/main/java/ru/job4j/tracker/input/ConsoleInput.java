@@ -10,4 +10,21 @@ public class ConsoleInput implements Input {
         System.out.print(question);
         return sc.nextLine();
     }
+
+    @Override
+    public int ask(String question, int[] range) {
+        while (true) {
+            try {
+                System.out.print(question);
+                int unknown = Integer.valueOf(sc.nextLine()) - 1;
+                for (int el : range) {
+                    if (el == unknown)
+                        return unknown;
+                }
+                System.out.println("select a value from the menu range!!!");
+            } catch (Exception e) {
+                System.out.println("enter the number!!!");
+            }
+        }
+    }
 }
