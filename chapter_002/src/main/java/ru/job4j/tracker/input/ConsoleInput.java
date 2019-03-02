@@ -18,8 +18,9 @@ public class ConsoleInput implements Input {
                 System.out.print(question);
                 int unknown = Integer.valueOf(sc.nextLine()) - 1;
                 for (int el : range) {
-                    if (el == unknown)
+                    if (el == unknown) {
                         return unknown;
+                    }
                 }
                 System.out.println("select a value from the menu range!!!");
             } catch (Exception e) {

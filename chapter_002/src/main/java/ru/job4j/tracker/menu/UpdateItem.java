@@ -4,7 +4,7 @@ import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.input.Input;
 
-public class UpdateItem implements UserAction{
+public class UpdateItem implements UserAction {
     @Override
     public int key() {
         return 3;

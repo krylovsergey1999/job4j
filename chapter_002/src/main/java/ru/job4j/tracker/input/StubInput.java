@@ -20,11 +20,11 @@ public class StubInput implements Input {
         try {
             int unknown = Integer.valueOf(this.value[this.position++]) - 1;
             for (int el : range) {
-                if (el == unknown)
+                if (el == unknown) {
                     return unknown;
+                }
             }
-
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new MenuOutException("enter the number!!!");
         }
         throw new MenuOutException("Out of range");

@@ -69,7 +69,7 @@ public class MenuTracker {
         int k = 1;
         for (UserAction action : this.actions) {
             if (action != null) {
-                System.out.println(k+") "+ action.info());
+                System.out.println(k + ") " + action.info());
                 k++;
             }
         }

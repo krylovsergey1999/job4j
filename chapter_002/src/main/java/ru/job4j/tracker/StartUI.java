@@ -19,10 +19,10 @@ public class StartUI {
         do {
             menu.show();
             int[] range = new int[menu.getActionsLentgh()];
-            for(int i=0; i < menu.getActionsLentgh(); i++){
+            for (int i = 0; i < menu.getActionsLentgh(); i++) {
                 range[i] = i;
             }
-            menu.select(input.ask("select: ",range));
+            menu.select(input.ask("select: ", range));
         } while (!"y".equals(this.input.ask("Exit?(y): ")));
     }
 
