@@ -41,4 +41,16 @@ public class ValidateInputTest {
         String expected = MENU + "Please enter validate data again.\r\n";
         assertTrue(expected.equals(result));
     }
+
+    @Test
+    public void whenIncorrectInput() {
+        ValidateInput input = new ValidateInput(
+                new StubInput(new String[]{"10", "7", "y"})
+        );
+        new StartUI(input, tracker).init();
+        System.setOut(this.out);
+        String result = mem.toString();
+        String expected = MENU + "Please select key from menu.\r\n";
+        assertTrue(expected.equals(result));
+    }
 }
