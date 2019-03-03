@@ -4,10 +4,9 @@ import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.input.Input;
 
-public class FindItemById implements UserAction {
-    @Override
-    public int key() {
-        return 5;
+public class FindItemById extends BaseAction {
+    public FindItemById() {
+        super(5, "Find item by Id");
     }
 
     @Override
@@ -21,10 +20,5 @@ public class FindItemById implements UserAction {
             item.showItem();
         }
         System.out.println("------------ The end. --------------");
-    }
-
-    @Override
-    public String info() {
-        return "Find item by Id";
     }
 }

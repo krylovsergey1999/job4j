@@ -4,10 +4,9 @@ import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.input.Input;
 
-public class UpdateItem implements UserAction {
-    @Override
-    public int key() {
-        return 3;
+public class UpdateItem extends BaseAction {
+    public UpdateItem() {
+        super(3, "Edit item");
     }
 
     @Override
@@ -24,10 +23,5 @@ public class UpdateItem implements UserAction {
             System.out.println("Item edit.");
         }
         System.out.println("------------ The end. --------------");
-    }
-
-    @Override
-    public String info() {
-        return "Edit item";
     }
 }

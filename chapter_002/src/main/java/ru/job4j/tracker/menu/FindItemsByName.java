@@ -4,10 +4,9 @@ import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.input.Input;
 
-public class FindItemsByName implements UserAction {
-    @Override
-    public int key() {
-        return 6;
+public class FindItemsByName extends BaseAction {
+    public FindItemsByName() {
+        super(6, "Find items by name");
     }
 
     @Override
@@ -18,10 +17,5 @@ public class FindItemsByName implements UserAction {
             el.showItem();
         }
         System.out.println("------------ The end. --------------");
-    }
-
-    @Override
-    public String info() {
-        return "Find items by name";
     }
 }
