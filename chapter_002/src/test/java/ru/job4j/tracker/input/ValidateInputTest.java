@@ -17,8 +17,8 @@ public class ValidateInputTest {
     private final ByteArrayOutputStream mem = new ByteArrayOutputStream();
     private final PrintStream out = System.out;
     Tracker tracker = new Tracker();
-    static final String MENU = "1) Add new Item.\r\n2) Show all items\r\n3) Edit item\r\n4) Delete item\r\n5) Find item by Id\r\n6) Find items by name\r\n7) Exit Program\r\n";
-
+    static String sep = System.lineSeparator();
+    static final String MENU = "1) Add new Item." + sep + "2) Show all items" + sep + "3) Edit item" + sep + "4) Delete item" + sep + "5) Find item by Id" + sep + "6) Find items by name" + sep + "7) Exit Program" + sep;
 
     @Before
     public void loadMem() {
@@ -38,7 +38,7 @@ public class ValidateInputTest {
         new StartUI(input, tracker).init();
         System.setOut(this.out);
         String result = mem.toString();
-        String expected = MENU + "Please enter validate data again.\r\n";
+        String expected = MENU + "Please enter validate data again." + sep;
         assertTrue(expected.equals(result));
     }
 
@@ -50,7 +50,7 @@ public class ValidateInputTest {
         new StartUI(input, tracker).init();
         System.setOut(this.out);
         String result = mem.toString();
-        String expected = MENU + "Please select key from menu.\r\n";
+        String expected = MENU + "Please select key from menu." + sep;
         assertTrue(expected.equals(result));
     }
 }

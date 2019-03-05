@@ -19,7 +19,8 @@ import static org.junit.Assert.assertThat;
 
 public class TestFindItemsByName {
     Tracker tracker = new Tracker();
-    static final String MENU = "1) Add new Item.\r\n2) Show all items\r\n3) Edit item\r\n4) Delete item\r\n5) Find item by Id\r\n6) Find items by name\r\n7) Exit Program\r\n";
+    static String sep = System.lineSeparator();
+    static final String MENU = "1) Add new Item." + sep + "2) Show all items" + sep + "3) Edit item" + sep + "4) Delete item" + sep + "5) Find item by Id" + sep + "6) Find items by name" + sep + "7) Exit Program" + sep;
 
     @Test
     public void whenFindItemsByName() {
@@ -32,7 +33,7 @@ public class TestFindItemsByName {
         new StartUI(input, tracker).init();
         String result = out.toString();
         String sItem = item.getName() + " Description:" + " " + item.getDesc() + " id: " + item.getId();
-        String expected = MENU + "------------ Find items by name --------------\r\n" + sItem + "\r\n------------ The end. --------------\r\n";
+        String expected = MENU + "------------ Find items by name --------------" + sep + sItem + sep + "------------ The end. --------------" + sep;
         assertTrue(result.equals(expected));
     }
 }
