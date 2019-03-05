@@ -16,6 +16,7 @@ notifications:
     on_success: never # default: change
     on_failure: always # default: always
 
+# Ключ
 env:
   global:
     - CODECOV_TOKEN="6def93b5-70fb-4a25-b6a9-497d44a25e0b"
