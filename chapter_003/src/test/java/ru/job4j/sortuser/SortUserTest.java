@@ -1,10 +1,8 @@
-package ru.job4j.sortUser;
+package ru.job4j.sortuser;
 
 import org.junit.Test;
-import ru.job4j.search.ConvertList2Array;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -21,7 +19,7 @@ public class SortUserTest {
         list.add(new User(5, "koli4"));
         list.add(new User(7, "koli5"));
         Set<User> set = SortUser.sort(list);
-        for(User el: set) {
+        for (User el : set) {
             assertThat(el.getAge(), is(5));
             break;
         }

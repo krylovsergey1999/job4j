@@ -1,4 +1,4 @@
-package ru.job4j.sortUser;
+package ru.job4j.sortuser;
 
 import java.util.List;
 import java.util.Set;
