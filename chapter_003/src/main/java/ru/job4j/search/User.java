@@ -1,16 +1,16 @@
 package ru.job4j.search;
 
 public class User {
-    private String id;
+    private int id;
     private String name;
     private String city;
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

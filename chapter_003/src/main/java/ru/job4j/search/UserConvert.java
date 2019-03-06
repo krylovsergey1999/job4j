@@ -8,7 +8,7 @@ public class UserConvert {
         HashMap<Integer, User> map = new HashMap<>();
         int ind = 0;
         for (User el : list) {
-            map.put(ind++, el);
+            map.put(el.getId(), el);
         }
         return map;
     }
