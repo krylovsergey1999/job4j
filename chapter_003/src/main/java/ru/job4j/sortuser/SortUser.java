@@ -14,7 +14,7 @@ public class SortUser {
         return list;
     }
 
-    public static List<User> sortByAllFields (List<User> list) {
+    public static List<User> sortByAllFields(List<User> list) {
         Comparator<User> comp = new ByAllFieldsComparator();
         list.sort(comp);
         return list;
