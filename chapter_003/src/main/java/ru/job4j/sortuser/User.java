@@ -34,4 +34,29 @@ public class User implements Comparable<User> {
     public int compareTo(User o) {
         return Integer.compare(this.age, o.age);
     }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        // проверка ссылок
+        if (this == otherObject) {
+            return true;
+        }
+
+        if (otherObject == null) {
+            return false;
+        }
+
+        if (getClass() != otherObject.getClass()) {
+            return false;
+        }
+
+        User other = (User) otherObject;
+
+        return name.equals(other.name) && (age == other.age);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode() * 11 * 13 * 37 * age;
+    }
 }

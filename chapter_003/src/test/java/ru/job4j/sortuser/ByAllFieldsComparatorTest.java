@@ -23,6 +23,12 @@ public class ByAllFieldsComparatorTest {
         res.add(new User(30, "Иван"));
         res.add(new User(20, "Сергей"));
         res.add(new User(25, "Сергей"));
-        assertTrue(list.get(0).getAge() == res.get(0).getAge());
+        boolean result = true;
+        for (int i = 0; i < list.size(); i++) {
+            if (!list.get(i).equals(res.get(i))) {
+                result = false;
+            }
+        }
+        assertTrue(result);
     }
 }
